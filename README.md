@@ -28,14 +28,29 @@ You can run wiNNer in two ways:
 *   keras (`pip install keras`)
 *   Tensorflow v1.7 (`pip install tensorflow==1.7.0`)
 
+## To run with command prompt 
+
+For tryptic peptide fragment intensity prediction use wiNNer_model as modelname.
+For ancient sample peptides fragment intensity predictions use ancient_model as modelname.
+
+```
+Python wiNNerprediction.py -i <inputfile> -o <outputfile> -d <modelname> -s <Sequence>
+Python wiNNerprediction.py -i <inputfile> -o <outputfile> -d <modelname> -s <ModifiedSequence>
+
+```
+
 ## To run executable 
 
 No installation required.
 Model and executable should be in one folder.
 Run the executable using command prompt.
-Select appropriate input file and model name directory  
+Select appropriate input file, model name directory and the sequence column 
+Sequence column can be Sequence or ModifiedSequence  
 
-```PredictSequences.exe -i <inputfile> -o <outputfile> -d<modelname>
+```
+PredictSequences.exe -i <inputfile> -o <outputfile> -d<modelname> -s<Sequence>
+PredictSequences.exe -i <inputfile> -o <outputfile> -d<modelname> -s<ModifiedSequence>
+
 ```
 ## Data format
 
@@ -49,6 +64,7 @@ contain at least the following columns:
     *   Our model can handle charges up to 7.
 *   Fragmentation type:
     *   Our model currently supports HCD and CID fragmentations.
+	* 	For ancient_model we only support HCD fragmentations.
 
 The input table can contain any number of columns, and the 3 required columns.
 Here’s an example input:
