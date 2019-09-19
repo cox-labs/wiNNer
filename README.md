@@ -12,9 +12,9 @@ Here, we provide a set of instructions for how to use the model for the intensit
 Citation
 --------
 
-If you use ``wiNNer`` in your projects, please cite
+If you use `wiNNer` in your projects, please cite
 
-Tiwary, S. et al.,*High-quality MS/MS spectrum prediction for data-dependent and data-independent acquisition data analysis* `doi:10.1038/s41592-019-0427-6 <https://doi.org/10.1038/s41592-019-0427-6>`_.
+Tiwary, S. et al.,*High-quality MS/MS spectrum prediction for data-dependent and data-independent acquisition data analysis* [doi:10.1038/s41592-019-0427-6](https://doi.org/10.1038/s41592-019-0427-6).
 
 You can predict fragment intensities using wiNNer in two ways:
 
