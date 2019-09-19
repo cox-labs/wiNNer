@@ -14,12 +14,12 @@ Citation
 
 If you use `wiNNer` in your projects, please cite
 
-Tiwary, S. et al.,*High-quality MS/MS spectrum prediction for data-dependent and data-independent acquisition data analysis* [doi:10.1038/s41592-019-0427-6](https://doi.org/10.1038/s41592-019-0427-6).
+Tiwary, S. et al., *High-quality MS/MS spectrum prediction for data-dependent and data-independent acquisition data analysis* [doi:10.1038/s41592-019-0427-6](https://doi.org/10.1038/s41592-019-0427-6).
 
 You can predict fragment intensities using wiNNer in two ways:
 
 *   using wiNNerprediction.exe.
-*   using wiNNerprediction python script.
+*   using wiNNerprediction.py python script.
 
 ## Prerequisites
 
@@ -38,12 +38,14 @@ You can predict fragment intensities using wiNNer in two ways:
 ## To run with command prompt 
 
 For tryptic peptide fragment intensity prediction use wiNNer_model as modelname.
-For ancient sample peptides fragment intensity predictions use ancient_model as modelname.
 
 ```
 Python wiNNerprediction.py -i <inputfile> -o <outputfile> -d <modelname> -s <Sequence>
-Python wiNNerprediction.py -i <inputfile> -o <outputfile> -d <modelname> -s <ModifiedSequence>
+```
+For ancient sample peptides fragment intensity predictions use ancient_model as modelname.
 
+```
+Python wiNNerprediction.py -i <inputfile> -o <outputfile> -d <modelname> -s <ModifiedSequence>
 ```
 
 ## To run executable 
@@ -51,8 +53,8 @@ Python wiNNerprediction.py -i <inputfile> -o <outputfile> -d <modelname> -s <Mod
 No installation required.
 Model and executable should be in one folder.
 Run the executable using command prompt.
-Select appropriate input file, model name directory and the sequence column 
-Sequence column can be Sequence or ModifiedSequence  
+Select appropriate input file, model name directory and the sequence column. 
+Sequence column can be Sequence or ModifiedSequence.  
 
 ```
 wiNNerprediction.exe -i <inputfile> -o <outputfile> -d<modelname> -s<Sequence>
@@ -62,7 +64,7 @@ wiNNerprediction.exe -i <inputfile> -o <outputfile> -d<modelname> -s<ModifiedSeq
 ## Data format
 
 Input data table should be written in TXT (tab-separated) file format and
-contain at least the following columns:
+should contain at least the following columns:
 
 *   Peptide sequence:
     *   Amino-acid modifications should be given in “(modification)” format as in MaxQuant output tables -
@@ -81,8 +83,9 @@ ModifiedSequence,Charge,Fragmentation
 AKM(ox)LIVR,3,HCD
 ILFWYK,2,CID
 or
-_AKM(ox)LIVR_,3,HCD
-_ILFWYK_,2,CID
+Sequence,Charge,Fragmentation
+AKMLIVR,3,HCD
+ILFWYK,2,CID
 ```
 
 
