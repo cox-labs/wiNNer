@@ -1,3 +1,19 @@
+r"""To predict YB spectra and outputs TSV predicted Intensities.
+
+This script reads data from a text file containing at least three columns:
+Peptide sequence, Charge and Fragmentation.
+It can predict y and b ions intensities for tryptic unmodified peptide, For this use wiNNer_model for predictions.
+It can also predict y and b ions intensities for non-tryptic peptides with modifications specific to ancient samples, for this use ancient_model for predictions.
+
+Example usage for the ancient model:
+  python wiNNerprediction.py \
+    -i exampleset.txt \
+    -o output.txt \
+    -d ancient_model \
+    -s ModifiedSequence
+"""
+
+
 import numpy as np
 import keras as K
 from keras.models import load_model
@@ -316,12 +332,12 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv, "hi:o:d:s:", ["ifile=", "ofile=","dfile","sequence_col"])
     except getopt.GetoptError:
-        print('PredictSequences.exe -i <inputfile> -o <outputfile> -d <modelpath> -s <sequenceCol>')
+        print('wiNNerprediction.exe -i <inputfile> -o <outputfile> -d <modelpath> -s <sequenceCol>')
         sys.exit(2)
 
     for opt, arg in opts:
         if opt == '-h':
-            print("PredictSequences.exe -i <inputfile> -o <outputfile> -d <modelpath> -s <sequence_col>")
+            print("wiNNerprediction.exe -i <inputfile> -o <outputfile> -d <modelpath> -s <sequenceCol>")
             sys.exit()
         elif opt in ("-i", "--ifile"):
             inputfile = arg
