@@ -9,10 +9,17 @@ wiNNer is build using conventional neural network using  Keras (https://keras.io
 TensorFlow v.1.3.0 was used as backend in Keras.
 Here, we provide a set of instructions for how to use the model for the intensity prediction.
 
-You can run wiNNer in two ways:
+Citation
+--------
 
-*   using wiNNerPrediction.exe.
-*   using wiNNerPrediction python script.
+If you use ``wiNNer`` in your projects, please cite
+
+Tiwary, S. et al.,*High-quality MS/MS spectrum prediction for data-dependent and data-independent acquisition data analysis* `doi:10.1038/s41592-019-0427-6 <https://doi.org/10.1038/s41592-019-0427-6>`_.
+
+You can predict fragment intensities using wiNNer in two ways:
+
+*   using wiNNerprediction.exe.
+*   using wiNNerprediction python script.
 
 ## Prerequisites
 
@@ -48,8 +55,8 @@ Select appropriate input file, model name directory and the sequence column
 Sequence column can be Sequence or ModifiedSequence  
 
 ```
-PredictSequences.exe -i <inputfile> -o <outputfile> -d<modelname> -s<Sequence>
-PredictSequences.exe -i <inputfile> -o <outputfile> -d<modelname> -s<ModifiedSequence>
+wiNNerprediction.exe -i <inputfile> -o <outputfile> -d<modelname> -s<Sequence>
+wiNNerprediction.exe -i <inputfile> -o <outputfile> -d<modelname> -s<ModifiedSequence>
 
 ```
 ## Data format
